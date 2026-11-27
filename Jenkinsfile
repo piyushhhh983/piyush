@@ -11,18 +11,6 @@ pipeline {
             }
         }
 
-        stage('Maven Version') {
-            steps {
-                sh 'mvn -version'
-            }
-        }
-
-        stage('Maven Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
-
         stage('Terraform Version') {
             steps {
                 sh 'terraform --version'
