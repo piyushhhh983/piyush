@@ -1,5 +1,4 @@
-
-
+```groovy
 pipeline {
     agent any
 
@@ -9,6 +8,18 @@ pipeline {
             steps {
                 git branch: 'main',
                 url: 'https://github.com/piyushhhh983/piyush.git'
+            }
+        }
+
+        stage('Maven Version') {
+            steps {
+                sh 'mvn -version'
+            }
+        }
+
+        stage('Maven Build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
 
@@ -44,3 +55,4 @@ pipeline {
         }
     }
 }
+```
